@@ -10,7 +10,7 @@ namespace IntroToXamarin
         {
             InitializeComponent();
 
-            var navPage = new NavigationPage(new MyCarouselPage());
+            var navPage = new NavigationPage(new PageA());
             navPage.BarTextColor = Color.DeepPink;
 
             MainPage = new TabbedPage();
