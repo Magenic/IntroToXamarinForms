@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageA"
+    Title="Page A"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Item 1" Order="Primary"></ToolbarItem>
+        <ToolbarItem Text="Sub Item 2" Order="Secondary" Priority="1"></ToolbarItem>
+        <ToolbarItem Text="Sub Item 1" Order="Secondary" Priority="0"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Page A"></Label>
+            <Button Text="Page B" Clicked="PageB_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
