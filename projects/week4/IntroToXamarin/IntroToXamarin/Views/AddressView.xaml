@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.Views.AddressView"
+    xmlns:views="clr-namespace:IntroToXamarin.Views;assembly=IntroToXamarin">
+    <ContentView.Content >
+        <Frame BorderColor="Black">
+        <StackLayout Orientation="Vertical" x:DataType="views:AddressView">
+            <Label Text="{Binding AddressTitle}"/>
+            <Grid ColumnDefinitions="*, Auto, Auto" RowDefinitions="Auto, Auto, Auto">
+                <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       Text="{Binding Address1}"/>
+                <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                       Text="{Binding Address2}"/>
+                <Entry Grid.Row="2" Grid.Column="0"
+                       Text="{Binding City}" Margin="0,0,5,0"/>
+                <Entry Grid.Row="2" Grid.Column="1" WidthRequest="30"
+                       Text="{Binding State}" MaxLength="2" />
+                <Entry Grid.Row="2" Grid.Column="2" WidthRequest="80"
+                       Text="{Binding PostalCode}" Margin="5,0,0,0" MaxLength="5" />
+            </Grid>
+        </StackLayout>
+            </Frame>
+    </ContentView.Content>
+</ContentView>

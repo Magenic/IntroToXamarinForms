@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageC"
+    xmlns:local="clr-namespace:IntroToXamarin.ViewModels;assembly=IntroToXamarin">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" x:DataType="local:ViewModelC">
+            <StackLayout.BindingContext>
+                <local:ViewModelC />
+            </StackLayout.BindingContext>
+            <Button Text="Add" Command="{Binding Add}"></Button>
+            <CollectionView ItemsSource="{Binding Items}" SelectionMode="Single" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" x:DataType="local:ModelC">
+                            <Label
+                       Text="{Binding Title}"
+                       FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
+                            <Button Text="Delete"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:ViewModelC}}, Path=Delete}"
+                                    CommandParameter="{Binding}"
+                                    HorizontalOptions="End" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

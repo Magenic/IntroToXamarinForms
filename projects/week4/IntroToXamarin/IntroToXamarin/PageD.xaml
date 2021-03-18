@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageD"
+    xmlns:vms="clr-namespace:IntroToXamarin.ViewModels;assembly=IntroToXamarin"
+    xmlns:converters="clr-namespace:IntroToXamarin.ValueConverters;assembly=IntroToXamarin"
+    x:Name="mainPage">
+    <ContentPage.BindingContext>
+        <vms:ViewModelD />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvalidConverter x:Key="invalidConverter" />
+            <converters:CurrencyConverter Currency="{Binding BindingContext.ConversionCurrency, Source={x:Reference mainPage}}" x:Key="currencyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" x:DataType="vms:ViewModelD">
+            <Label Text="USD Amount" ></Label>
+            <Entry Text="{Binding UsdAmount}" ></Entry>
+            <Picker Title="Select a conversion currency"
+                TitleColor="Black"
+                SelectedItem="{Binding ConversionCurrency}"
+                >
+                <Picker.Items>
+                    <x:String>Euro</x:String>
+                    <x:String>Canadian Dollar</x:String>
+                    <x:String>Philippine Peso</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="foreignEntry" Text="{Binding UsdAmount, Converter={StaticResource currencyConverter}}">
+            </Entry>
+            <Button Text="Save" Command="{Binding Save}" IsEnabled="{Binding Invalid, Converter={StaticResource invalidConverter}}"></Button>
+            <Label Text="Be careful of two way value converters"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

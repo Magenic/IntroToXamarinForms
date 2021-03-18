@@ -10,10 +10,7 @@ namespace IntroToXamarin
         {
             InitializeComponent();
 
-            var navPage = new NavigationPage(new PageA());
-            navPage.BarTextColor = Color.DeepPink;
-
-            MainPage = new MyTabbedPage(); //navPage;
+            MainPage = new PageA();
         }
 
         protected override void OnStart()

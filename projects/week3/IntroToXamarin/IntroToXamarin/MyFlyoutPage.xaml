@@ -12,6 +12,6 @@
             <x:Arguments>
                 <layouts:PageA />
             </x:Arguments>
-     </NavigationPage>
+        </NavigationPage>
     </FlyoutPage.Detail>
 </FlyoutPage>

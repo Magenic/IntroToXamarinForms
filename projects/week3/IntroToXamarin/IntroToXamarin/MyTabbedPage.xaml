@@ -2,19 +2,17 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IntroToXamarin.MyTabbedPage"
-             xmlns:layouts="clr-namespace:IntroToXamarin"
-            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.ToolbarPlacement="Bottom">
-  <TabbedPage.Children>
-    <NavigationPage Title="First Tab">
-        <x:Arguments>
-            <layouts:PageA />
-        </x:Arguments>
-    </NavigationPage>
-    <ContentPage Title="Tab 1" />
-    <ContentPage Title="Tab 2" />
-    <ContentPage Title="Tab 3" />
-      <ContentPage Title="Tab 4" />
-      <ContentPage Title="Tab 5" />
-   </TabbedPage.Children>
+             xmlns:layouts="clr-namespace:IntroToXamarin">
+    <TabbedPage.Children>
+        <NavigationPage Title="First Tab">
+            <x:Arguments>
+                <layouts:PageA></layouts:PageA>
+            </x:Arguments>
+        </NavigationPage>
+        <ContentPage Title="Tab 1"></ContentPage>
+        <ContentPage Title="Tab 2"></ContentPage>
+        <ContentPage Title="Tab 3"></ContentPage>
+        <ContentPage Title="Tab 4"></ContentPage>
+        <ContentPage Title="Tab 5"></ContentPage>
+    </TabbedPage.Children>
 </TabbedPage>

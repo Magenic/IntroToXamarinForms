@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageB"
+    xmlns:local="clr-namespace:IntroToXamarin.ViewModels;assembly=IntroToXamarin">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" x:DataType="local:ViewModelB">
+            <StackLayout.BindingContext>
+                <local:ViewModelB />
+            </StackLayout.BindingContext>
+            <Entry Text="{Binding Foo}"></Entry>
+            <Button Text="Save" Command="{Binding Submit}" CommandParameter="{Binding Foo}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

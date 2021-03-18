@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageF"
+    xmlns:vms="clr-namespace:IntroToXamarin.ViewModels;assembly=IntroToXamarin"
+    xmlns:views="clr-namespace:IntroToXamarin.Views;assembly=IntroToXamarin"
+    xmlns:converters="clr-namespace:IntroToXamarin.ValueConverters;assembly=IntroToXamarin">
+    <ContentPage.BindingContext>
+        <vms:ViewModelE />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:AddressMultiBindingConverter x:Key="addressValidConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" x:DataType="vms:ViewModelE">
+            <Label Text="Name:" />
+            <Entry Text="{Binding ContactName}" />
+            <views:AddressView
+                Address1="{Binding ContactAddress.Address1}"
+                Address2="{Binding ContactAddress.Address2}"
+                City="{Binding ContactAddress.City}"
+                State="{Binding ContactAddress.State}"
+                PostalCode="{Binding ContactAddress.PostalCode}"/>
+            <Button Text="Save">
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{StaticResource addressValidConverter}">
+                        <Binding Path="ContactAddress.Address1" />
+                        <Binding Path="ContactAddress.City" />
+                        <Binding Path="ContactAddress.State" />
+                        <Binding Path="ContactAddress.PostalCode" />
+                    </MultiBinding>
+                </Button.IsEnabled>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
