@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageF">
+    <ContentPage.Resources>
+                <Style x:Key="LargeLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+            <Setter Property="FontSize" Value="30" />
+        </Style>
+
+        <Style x:Key="MediumLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+            <Setter Property="FontSize" Value="25" />
+        </Style>
+
+        <Style x:Key="SmallLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource TertiaryTextColor}" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="{DynamicResource PageBackgroundColor}">
+            <Label Text="foo" Style="{DynamicResource LargeLabelStyle}" />
+            <Label Text="bar" Style="{DynamicResource MediumLabelStyle}" />
+            <Label Text="kitty" Style="{DynamicResource SmallLabelStyle}" />
+            <Button Text="Switch Theme" Clicked="Button_Clicked" />
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>

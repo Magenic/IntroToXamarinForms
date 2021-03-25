@@ -10,7 +10,7 @@ namespace IntroToXamarin
         {
             InitializeComponent();
 
-            MainPage = new PageF();
+            MainPage = new NavigationPage(new PageA());
         }
 
         protected override void OnStart()

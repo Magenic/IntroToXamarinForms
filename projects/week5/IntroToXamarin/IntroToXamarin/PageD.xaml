@@ -2,11 +2,12 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="IntroToXamarin.PageA">
+    x:Class="IntroToXamarin.PageD"
+    Title="Page D">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Label Text="{Binding Foo}" x:Name="fooEntry"></Label>
-            <Entry Text="{Binding Foo}"></Entry>
+            <Label Text="Body Style" Style="{DynamicResource BodyStyle}" />
+            <Label Text="No Device Style" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

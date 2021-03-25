@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageC"
+    Title="Page C">
+    <ContentPage.Resources>
+        <Style x:Key="blackText" TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style x:Key="redText" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"/>
+        </Style>
+        <Style x:Key="labelStrikethrough" TargetType="Label" BaseResourceKey="labelStyle">
+            <Setter Property="TextDecorations" Value="Strikethrough" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="foo" Style="{DynamicResource labelStyle}" />
+            <Label Text="bar" Style="{StaticResource labelStrikethrough}" />
+            <Button Text="Switch Style" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

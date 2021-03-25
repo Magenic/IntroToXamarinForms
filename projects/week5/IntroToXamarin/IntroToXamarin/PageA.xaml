@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="IntroToXamarin.PageA"
+    Title="Page A">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="VerticalTextAlignment" Value="End" />
+                <Setter Property="Padding" Value="5,0,0,5" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="VerticalTextAlignment" Value="End" />
+            </Style>
+            <Style x:Key="submit" TargetType="Button">
+                <Setter Property="BorderColor" Value="BlanchedAlmond" />
+                <Setter Property="Margin" Value="5, 0, 5, 5" />
+                <Setter Property="IsEnabled" Value="False" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
+              ColumnDefinitions="Auto, *">
+            <Label Text="First Name:" Grid.Column="0" Grid.Row="0"/>
+            <Entry Grid.Column="1" Grid.Row="0"/>
+            <Label Text="Last Name:" Grid.Column="0" Grid.Row="1"/>
+            <Entry Grid.Column="1" Grid.Row="1"/>
+            <Label Text="Phone:" Grid.Column="0" Grid.Row="2"/>
+            <Entry Grid.Column="1" Grid.Row="2"/>
+            <Button Text="Submit" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource submit}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

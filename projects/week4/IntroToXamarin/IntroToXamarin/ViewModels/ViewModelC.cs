@@ -15,7 +15,7 @@ namespace IntroToXamarin.ViewModels
             this.Add.Execute(null);
         }
 
-        public ObservableCollection<ModelC> Items { get; set; }
+        public ObservableCollection<ModelC> Items { get; private set; }
 
         private ICommand delete = null;
         public ICommand Delete
